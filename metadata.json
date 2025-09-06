@@ -1,0 +1,5 @@
+{
+  "name": "Criminal Case Image Aggregator",
+  "description": "An intelligent system that searches for and organizes images related to criminals and criminal cases. It uses AI to generate plausible image descriptions and metadata for documentary and narrative purposes.",
+  "requestFramePermissions": []
+}
