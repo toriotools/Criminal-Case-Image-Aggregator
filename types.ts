@@ -1,25 +1,26 @@
-export interface GeminiImageResponse {
-  description: string;
-  imageType: string;
-  source: string;
-  year: number;
-  generatedFilename: string;
-  sourceUrl: string;
-  base64Image: string;
-}
-
-export interface ImageResult extends GeminiImageResponse {
+export interface NewsImage {
   id: string;
   imageUrl: string;
+  title: string;
+  source: string;
+  articleUrl: string;
+  width?: number;
+  height?: number;
+  thumbnailUrl?: string;
 }
 
-export interface CaseResult {
+export interface NewsResult {
   searchTerm: string;
-  images: ImageResult[];
+  images: NewsImage[];
+  totalResults?: number;
+  currentPage: number;
+  totalPages: number;
+  hasMore: boolean;
 }
 
 export interface SearchOptions {
-    searchTerms: string;
-    language: 'en' | 'pt' | 'es';
-    imageCount: number;
+  searchTerms: string;
+  apiKey: string;
+  searchEngineId?: string;
+  maxResults?: number;
 }
