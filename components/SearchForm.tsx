@@ -10,7 +10,7 @@ interface SearchFormProps {
 const SearchForm: React.FC<SearchFormProps> = ({ onSearch, isLoading }) => {
   const [searchTerms, setSearchTerms] = useState<string>('Al Capone\nTed Bundy');
   const [apiKey, setApiKey] = useState<string>('');
-  const [searchEngineId, setSearchEngineId] = useState<string>('873c22d7520234923');
+  const [searchEngineId, setSearchEngineId] = useState<string>('');
   const [maxResults, setMaxResults] = useState<number>(100);
   const [rememberCredentials, setRememberCredentials] = useState<boolean>(false);
 
@@ -66,7 +66,7 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSearch, isLoading }) => {
   const handleClearCredentials = () => {
     if (confirm('Are you sure you want to clear all saved credentials?')) {
       setApiKey('');
-      setSearchEngineId('873c22d7520234923'); // Reset to default
+      setSearchEngineId(''); // Reset to empty
       setRememberCredentials(false);
       localStorage.removeItem('torio-tools-api-key');
       localStorage.removeItem('torio-tools-search-engine-id');
@@ -109,12 +109,17 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSearch, isLoading }) => {
           value={searchEngineId}
           onChange={(e) => setSearchEngineId(e.target.value)}
         />
-        <p className="text-xs text-gray-500 mt-1">
-          Create one at{' '}
-          <a href="https://programmablesearchengine.google.com/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">
-            Google Custom Search
-          </a>
-        </p>
+        <div className="text-xs text-gray-500 mt-1 space-y-1">
+          <p>
+            Create your own at{' '}
+            <a href="https://programmablesearchengine.google.com/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">
+              Google Custom Search
+            </a>
+          </p>
+          <p className="text-red-400 font-semibold">
+            ⚠️ IMPORTANT: Use ONLY your own Search Engine ID! Never share or use someone else's ID.
+          </p>
+        </div>
       </div>
 
       <div>
@@ -161,7 +166,7 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSearch, isLoading }) => {
           <div>
             <span className="text-sm font-medium text-gray-300">Remember my API credentials</span>
             <p className="text-xs text-gray-500 mt-0.5">
-              ⚠️ Only enable on your personal device. Credentials are stored locally in your browser.
+              ⚠️ Only enable on your personal device. These are YOUR personal API credentials - never share them!
             </p>
           </div>
         </label>

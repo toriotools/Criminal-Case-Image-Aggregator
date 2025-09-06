@@ -84,19 +84,25 @@ npm run dev
 
 2. **Custom Search Engine**:
    - Visit [Google Programmable Search](https://programmablesearchengine.google.com/)
-   - Create a new search engine
+   - Create a **NEW** search engine (don't use someone else's!)
    - Set it to search "Entire web"
-   - Enable "Image search"
-   - Copy your Search Engine ID
+   - Enable "Image search"  
+   - Copy **YOUR** Search Engine ID
+   - **🔒 NEVER share this ID with others - it's tied to your Google account!**
 
 ## 🎯 Usage Guide
 
 ### Basic Operation
-1. **Enter API Credentials** - Paste your Google API key and Search Engine ID
+1. **Enter YOUR API Credentials** - Use only your own Google API key and Search Engine ID
 2. **Enable "Remember Credentials"** - For convenience (personal devices only!)
 3. **Add Search Terms** - One criminal name/case per line
 4. **Select Image Limit** - Choose 10, 20, 50, or 100 images
 5. **Click "Find Images"** - Watch the magic happen!
+
+### 🔒 **CRITICAL SECURITY REMINDER:**
+- **NEVER use someone else's API credentials**
+- **Each user MUST create their own Google API key and Custom Search Engine**
+- **Sharing credentials is a security risk and may violate Google's terms**
 
 ### Advanced Features
 - **Load More Pages** - Click to get additional results without duplicates
